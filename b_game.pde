@@ -5,7 +5,8 @@ void game() {
   drawRoom();
   drawGameObjects();
   darknessDraw();
-  drawMap();
+  if (mapkey == true) drawMap();
+
 
 
   //pause

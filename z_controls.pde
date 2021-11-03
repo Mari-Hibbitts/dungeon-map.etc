@@ -7,6 +7,7 @@ void keyPressed() {
   if (keyCode == ' ')    spacekey = true;
   if (key == 'p' || key == 'P') pause = true;
   if (key == 'a' || key == 'A') select = true;
+  if (key == 'm' || key == 'M') mapkey =  true;
 }
 
 void keyReleased() {
@@ -18,4 +19,5 @@ void keyReleased() {
   if (keyCode == ' ')    spacekey = false;
   if (key == 'p' || key == 'P') pause = false;
   if (key == 'a' || key == 'A') select = false;
+    if (key == 'M' || key == 'm') mapkey =  false;
 }
