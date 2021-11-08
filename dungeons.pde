@@ -24,7 +24,7 @@ final int MOUSE = 2;
 final int GAME = 3;
 final int PAUSE = 4;
 final int GAMEOVER = 5;
-boolean upkey, downkey, leftkey, rightkey, spacekey, select, pause, mapkey;
+boolean wkey, skey, akey, dkey, spacekey, select, pause, mapkey;
 
 // =============================== objects
 ArrayList<GameObjects> myObjects;

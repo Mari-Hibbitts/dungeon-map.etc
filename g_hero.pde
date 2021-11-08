@@ -8,7 +8,7 @@ Weapon myWeapon;
    speed = 5;
    roomX = 1;
    roomY = 1;
-myWeapon = new Weapon();
+myWeapon = new AutoPistol();
  
  }
  
@@ -23,15 +23,15 @@ circle(loc.x, loc.y, 40);
  void act(){
    super.act();
  
- if (upkey) vel.y = -speed;
- if(downkey) vel.y = speed;
- if (leftkey) vel.x = -speed;
-  if (rightkey) vel.x = speed;
+ if (wkey) vel.y = -speed;
+ if(skey) vel.y = speed;
+ if (akey) vel.x = -speed;
+  if (dkey) vel.x = speed;
  
   if (vel.mag() > speed) vel.setMag(speed);
  
-  if (!upkey && !downkey) vel.y = vel.y*0.9;
-if (!leftkey && !rightkey) vel.x = vel.x*0.9;
+  if (!wkey && !skey) vel.y = vel.y*0.9;
+if (!akey && !dkey) vel.x = vel.x*0.9;
 
 //moving around rooms
 
