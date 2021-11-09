@@ -48,16 +48,18 @@ void drawRoom() {
 }
 
 void drawGameObjects() {
-  int i = 0;
-  while (i<myObjects.size()) {
+ 
+  for (int i = 0; i < myObjects.size(); i++) {
     GameObjects myObj = myObjects.get(i);
+ if(myObj.roomX == myHero.roomX && myObj.roomY == myHero.roomY){
     myObj.show();
     myObj.act();
     if (myObj.hp == 0) {
       myObjects.remove(i);
-    } else {
-      i++;
-    }
+         i--;
+    }  
+    
+  }
   }
 }
 

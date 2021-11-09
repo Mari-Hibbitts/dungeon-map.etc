@@ -8,6 +8,7 @@ Weapon myWeapon;
    speed = 5;
    roomX = 1;
    roomY = 1;
+   size = 40;
 myWeapon = new AutoPistol();
  
  }
@@ -16,7 +17,7 @@ myWeapon = new AutoPistol();
 fill(green);
 stroke(black);
 strokeWeight(2);
-circle(loc.x, loc.y, 40);
+circle(loc.x, loc.y, size);
  
  }
  

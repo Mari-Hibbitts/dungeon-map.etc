@@ -80,6 +80,7 @@ doorW = loadImage("doorW.png");
 myHero = new Hero();
  myObjects = new ArrayList<GameObjects>();
  myObjects.add(myHero);
+ myObjects.add (new Enemy());
  
  //darkness
  darkness = new ArrayList<Darkness>();
