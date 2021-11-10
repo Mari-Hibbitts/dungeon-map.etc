@@ -9,12 +9,21 @@ class Enemy extends GameObjects {
     size = 45;
   }
 
+  Enemy(int _hp, int s, int x, int y) {
+    loc = new PVector (width/2, height/2);
+    vel = new PVector (0, 0 );
+    hp = _hp;
+    roomX = x;
+    roomY = y;
+    size = s;
+  }
+
   void show() {
 
     stroke(0);
     strokeWeight(2);
     fill(red);
-    ellipse(loc.x, loc.y, size, size);
+    circle(loc.x, loc.y, size);
     fill(black);
     textSize(20);
     text(hp, loc.x, loc.y);
