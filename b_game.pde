@@ -8,7 +8,6 @@ void game() {
   if (mapkey == true) drawMap();
 
 
-
   //pause
   if (pause == true) {
     mode = PAUSE;
@@ -54,7 +53,7 @@ void drawGameObjects() {
  if(myObj.roomX == myHero.roomX && myObj.roomY == myHero.roomY){
     myObj.show();
     myObj.act();
-    if (myObj.hp == 0) {
+    if (myObj.hp <= 0) {
       myObjects.remove(i);
          i--;
     }  

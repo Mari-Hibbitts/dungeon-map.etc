@@ -81,8 +81,8 @@ void setup() {
   myObjects = new ArrayList<GameObjects>();
   myObjects.add(myHero);
   myObjects.add (new Enemy());
-  myObjects.add(new Follower(1, 2));
-  myObjects.add(new Follower(2, 1));
+  myObjects.add(new Follower(1, 2, width/2, height/2));
+  myObjects.add(new Lurker(2, 1, width/2, height/2));
   myObjects.add(new Spawner(1, 3));
 
   //darkness

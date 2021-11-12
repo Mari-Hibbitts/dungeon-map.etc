@@ -15,8 +15,8 @@ square(loc.x, loc.y, size);
 void act(){
   timer++;
 super.act();
-if (timer == 300){
-myObjects.add(new Follower(roomX, roomY));  //add a location later 
+if (timer == 200){
+myObjects.add(new Follower(roomX, roomY, int(random(0, 600)), int(random(0, 800))));  //add a location later 
 timer = 0;
 }
 
