@@ -1,7 +1,7 @@
 class Enemy extends GameObjects {
 
-  Enemy() {
-    loc = new PVector (width/2, height/2);
+  Enemy(int locx, int locy) {
+     loc = new PVector (locx, locy);
     vel = new PVector (0, 0 );
     hp = 100;
     roomX = 1;

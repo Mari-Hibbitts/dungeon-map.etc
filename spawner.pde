@@ -16,7 +16,7 @@ void act(){
   timer++;
 super.act();
 if (timer == 350){
-myObjects.add(new Follower(roomX, roomY, int(loc.x), int(loc.y)));  //add a location later 
+myObjects.add(new Follower(40,roomX, roomY, int(loc.x), int(loc.y)));  
 timer = 0;
 }
 

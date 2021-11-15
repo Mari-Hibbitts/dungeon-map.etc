@@ -5,6 +5,7 @@ Weapon myWeapon;
 
  Hero(){
    super();
+   hp = 100;
    speed = 5;
    roomX = 1;
    roomY = 1;
@@ -23,7 +24,16 @@ circle(loc.x, loc.y, size);
  
  void act(){
    super.act();
+ //collide
  
+if (dist(enemy.loc.x, enemy.loc.y, myHero.loc.x, myHero.loc.y) < enemy.size/2 + myHero.size/2){
+ println("die");
+  myHero.hp--;
+if (hp <=0){
+mode = GAMEOVER;
+}
+}
+
  if (wkey) vel.y = -speed;
  if(skey) vel.y = speed;
  if (akey) vel.x = -speed;
@@ -42,13 +52,12 @@ loc = new PVector (width/2,497);
 }
 
 if (eastRoom!=#FFFFFF && loc.y > 262 && loc.y < 327 && loc.x == 687){
-  println(roomX);
+
 roomX++;
 loc = new PVector (113,height/2);
 }
 
 if (southRoom!=#FFFFFF && loc.x > 375 && loc.x < 432 && loc.y == 496){
-println(roomY);
 roomY++;
 loc = new PVector (width/2,103);
 }
@@ -61,7 +70,6 @@ loc = new PVector (687,height/2);
  if (spacekey) myWeapon.shoot();
  
  }
-
 
 
 

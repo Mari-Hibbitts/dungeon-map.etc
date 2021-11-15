@@ -1,6 +1,6 @@
 class Follower extends Enemy{
-Follower(int x, int y, int locx, int locy){
-super(176,50,x, y);
+Follower(int hp,int x, int y, int locx, int locy){
+super(hp,50,x, y);
  loc = new PVector (locx, locy);
 }
 
