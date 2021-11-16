@@ -1,7 +1,7 @@
 class Enemy extends GameObjects {
 
   Enemy(int locx, int locy) {
-     loc = new PVector (locx, locy);
+    loc = new PVector (locx, locy);
     vel = new PVector (0, 0 );
     hp = 100;
     roomX = 1;
@@ -31,7 +31,7 @@ class Enemy extends GameObjects {
 
   void act() {
     super.act();
-  
+
     int i = 0;
     while (i < myObjects.size()) {
       GameObjects obj = myObjects.get(i);
@@ -46,5 +46,4 @@ class Enemy extends GameObjects {
       i++;
     }
   }
-
 }

@@ -23,15 +23,15 @@ class Bullet extends GameObjects {
   }
 
   void act() {
-     loc.add(vel);  
+    loc.add(vel);  
     timer--;
     if (timer == 0) {
       hp = 0;
     }
     //collision (different from gameobject)
-if (loc.x > 700) hp = 0;
-if (loc.x < 103)hp= 0;
-if (loc.y > 513) hp = 0;
-if (loc.y < 85)hp = 0;
+    if (loc.x > 700) hp = 0;
+    if (loc.x < 103)hp= 0;
+    if (loc.y > 513) hp = 0;
+    if (loc.y < 85)hp = 0;
   }
 }

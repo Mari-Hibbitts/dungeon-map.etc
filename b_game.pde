@@ -1,12 +1,10 @@
 void game() {
-
-
+  fill(255);
   background(0);
   drawRoom();
   drawGameObjects();
   darknessDraw();
   if (mapkey == true) drawMap();
-
 
   //pause
   if (pause == true) {
@@ -47,18 +45,17 @@ void drawRoom() {
 }
 
 void drawGameObjects() {
- 
+
   for (int i = 0; i < myObjects.size(); i++) {
     GameObjects myObj = myObjects.get(i);
- if(myObj.roomX == myHero.roomX && myObj.roomY == myHero.roomY){
-    myObj.show();
-    myObj.act();
-    if (myObj.hp <= 0) {
-      myObjects.remove(i);
-         i--;
-    }  
-    
-  }
+    if (myObj.roomX == myHero.roomX && myObj.roomY == myHero.roomY) {
+      myObj.show();
+      myObj.act();
+      if (myObj.hp <= 0) {
+        myObjects.remove(i);
+        i--;
+      }
+    }
   }
 }
 

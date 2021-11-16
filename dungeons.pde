@@ -82,7 +82,7 @@ void setup() {
 
   //================= objects
   myHero = new Hero();
-  follower = new Follower(150,1, 2, width/2, height/2);
+  follower = new Follower(150, 1, 2, width/2, height/2);
   lurker = new Lurker(2, 1, width/2, height/2);
   spawner = new Spawner(1, 3);
   enemy = new Enemy(20, 420);
