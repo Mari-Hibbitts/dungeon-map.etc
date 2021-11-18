@@ -27,22 +27,7 @@ class Hero extends GameObjects {
 
   void act() {
     super.act();
-    //collide
-    if (immune == false) {
-
-      if (dist(enemy.loc.x, enemy.loc.y, myHero.loc.x, myHero.loc.y)< enemy.size/2+myHero.size/2) {
-        hp = hp -1;
-        println("yargh");
-        immune = true;
-      }
-
-      if (dist(follower.loc.x, follower.loc.y, myHero.loc.x, myHero.loc.y)< follower.size/2+myHero.size/2) {
-        hp = hp -1;
-        println("yargh");
-        immune = true;
-      }
-    }
-
+    
     if (immune) {
       immunetime++;
       c = red;
