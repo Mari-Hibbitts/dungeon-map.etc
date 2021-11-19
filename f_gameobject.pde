@@ -21,4 +21,13 @@ class GameObjects {
     if (loc.y > 497) loc.y = 496;
     if (loc.y < 102) loc.y = 103;
   }
+  
+  //boolean isCollidingWith(GameObjects myObj){
+  //float d = dist(myObj.loc.x, myObj.loc.y, loc.x, loc.y);
+  //if (myObj.roomX = roomX && myObj.roomY = roomY){
+  
+  //}
+ 
+  
+  //}
 }

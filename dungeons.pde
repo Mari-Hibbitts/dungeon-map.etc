@@ -1,5 +1,10 @@
 //Marika H
 
+
+//setting variables
+int SHOTGUN_THRESHOLD = 100;
+int SHOTGUN_BULLETSPEED = 5;
+
 //buttons
 boolean mouseReleased;
 boolean hadPressed;
@@ -9,14 +14,14 @@ Button returnButton;
 
 
 // ====================== colors 
-color green  = #31710D;
+color green     = #31710D;
 color darkGreen = #15580C;
-color red    = #BF1D1D;
+color red       = #BF1D1D;
 color brightRed = #F70F0F;
-color brown =  #812828;
-color darkBlue = #1D0B67;
-color black  = #000000;
-color white  = #FFFFFF;
+color brown     =  #812828;
+color darkBlue  = #1D0B67;
+color black     = #000000;
+color white     = #FFFFFF;
 color northRoom, eastRoom, southRoom, westRoom;
 
 //======================================= mode framework and controls

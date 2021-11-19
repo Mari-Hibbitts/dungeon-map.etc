@@ -4,7 +4,7 @@ class Bullet extends GameObjects {
   PVector aim;
   int timer;
 
-  Bullet(PVector _aim, color _c, int _s, int mag) {
+  Bullet(PVector _aim, color _c, int _s ) {
     super();
     timer = 90;
     c = _c;
@@ -12,7 +12,7 @@ class Bullet extends GameObjects {
     size = _s;
     loc = new PVector (myHero.loc.x, myHero.loc.y);
     vel = _aim;
-    vel.setMag(mag);
+    vel.setMag(5);
     roomX = myHero.roomX;
     roomY = myHero.roomY;
   }
