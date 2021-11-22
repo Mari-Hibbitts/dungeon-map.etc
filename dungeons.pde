@@ -5,6 +5,8 @@
 int SHOTGUN_THRESHOLD = 100;
 int SHOTGUN_BULLETSPEED = 5;
 
+
+
 //buttons
 boolean mouseReleased;
 boolean hadPressed;
@@ -89,10 +91,11 @@ void setup() {
   myHero = new Hero();
   myObjects = new ArrayList<GameObjects>();
   myObjects.add(myHero);
-  myObjects.add (new Enemy(20, 420));
   myObjects.add(new Follower (150, 1, 2, width/2, height/2));
 
   //darkness
+
+
   darkness = new ArrayList<Darkness>();
   int s = 5;
   int x = 0, y = 0;
@@ -104,6 +107,7 @@ void setup() {
       y = y + 5;
     }
   }
+  
   //loading the enemies from map
   x = 0;
   y = 0;
@@ -114,6 +118,10 @@ void setup() {
     }
        if (roomColor == black){
         myObjects.add(new Spawner(x, y));  
+    }
+    
+       if (roomColor == darkBlue){
+        myObjects.add(new Bat(100,x, y, width/2, height/2));  
     }
   x++;
   if (x == map.width){

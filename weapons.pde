@@ -23,7 +23,7 @@ class ShotGun extends Weapon {
         PVector aimVector =new PVector (mouseX - myHero.loc.x, mouseY-myHero.loc.y);
         aimVector.rotate (random(-PI, PI));
         aimVector.setMag(bulletSpeed);
-        myObjects.add(new Bullet (aimVector, black, 10, 5));
+        myObjects.add(new Bullet (aimVector, black, 10));
       }
       shotTimer = 0;
     }

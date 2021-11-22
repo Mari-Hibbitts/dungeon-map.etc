@@ -7,6 +7,7 @@ class Hero extends GameObjects {
   Hero() {
     super();
     hp = 100;
+    loc = new PVector (50, 50);
     speed = 5;
     roomX = 1;
     roomY = 1;
