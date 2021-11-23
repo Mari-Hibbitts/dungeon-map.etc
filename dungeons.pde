@@ -5,8 +5,6 @@
 int SHOTGUN_THRESHOLD = 100;
 int SHOTGUN_BULLETSPEED = 5;
 
-
-
 //buttons
 boolean mouseReleased;
 boolean hadPressed;

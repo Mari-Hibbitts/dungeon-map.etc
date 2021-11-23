@@ -22,8 +22,16 @@ class Hero extends GameObjects {
     stroke(black);
     strokeWeight(2);
     circle(loc.x, loc.y, size);
-    fill(255);
-    text(myHero.hp, loc.x, loc.y);
+//healthbar
+rectMode(CENTER);
+fill(brightRed);
+stroke(0);
+strokeWeight(2);
+float lifemeter = map(hp, 0, 100, 0, 70);
+rect(loc.x, loc.y + -35, 70, 10);
+fill(green);
+noStroke();
+rect(loc.x, loc.y - 35, lifemeter, 10);
   }
 
   void act() {
