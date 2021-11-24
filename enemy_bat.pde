@@ -5,7 +5,7 @@ class Bat extends Enemy {
     super(hp, 50, x, y);
     loc = new PVector (locx, locy);
   }
-
+  
   void show() {
     stroke(0);
     strokeWeight(2);

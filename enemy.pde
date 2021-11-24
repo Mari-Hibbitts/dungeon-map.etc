@@ -36,6 +36,7 @@ class Enemy extends GameObjects {
        if (vel.mag() > 0) myHero.hp = myHero.hp - int(vel.mag());
         if(vel.mag() <= 0) myHero.hp  = myHero.hp - 1;
         println("yargh");
+ 
         myHero.immune = true;
       }
     }
@@ -51,6 +52,10 @@ class Enemy extends GameObjects {
       }
 
       i++;
+    }
+    
+    if (hp <=0){
+         myObjects.add(new droppedItem(loc.x, loc.y, roomX, roomY));
     }
   }
 }

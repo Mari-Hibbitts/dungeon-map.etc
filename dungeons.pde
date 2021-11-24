@@ -55,6 +55,7 @@ PImage doorN;
 PImage doorE; 
 PImage doorS;
 PImage doorW;
+PImage potion;
 
 //fonts ================
 PFont iFont;
@@ -83,6 +84,7 @@ void setup() {
   doorE = loadImage("doorE.png");
   doorS = loadImage("doorS.png");
   doorW = loadImage("doorW.png");
+  potion = loadImage("health4.png");
 
 
   //================= objects
