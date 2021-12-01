@@ -1,6 +1,5 @@
 //Marika H
 
-
 //setting variables
 int SHOTGUN_THRESHOLD = 100;
 int SHOTGUN_BULLETSPEED = 5;
@@ -22,6 +21,7 @@ color brown     =  #812828;
 color darkBlue  = #1D0B67;
 color black     = #000000;
 color white     = #FFFFFF;
+color grey      = #BFBBBB;
 color northRoom, eastRoom, southRoom, westRoom;
 
 //======================================= mode framework and controls
@@ -43,6 +43,10 @@ ArrayList<Darkness> darkness;
 
 //========================= gifs and images
 AnimatedGif Giff;
+AnimatedGif spriteUp;
+AnimatedGif spriteDown;
+AnimatedGif spriteLeft;
+AnimatedGif spriteRight;
 PImage room;
 PImage floor;
 PImage card1;
@@ -56,6 +60,7 @@ PImage doorE;
 PImage doorS;
 PImage doorW;
 PImage potion;
+PImage shield, shieldcount;
 
 //fonts ================
 PFont iFont;
@@ -65,11 +70,16 @@ void setup() {
   mode = GAME;
   size(800, 600, FX2D);
   Giff = new AnimatedGif(247, "gif1/frame_", "_delay-0.04s.png" );
+  spriteUp = new AnimatedGif (4, "sprite/up/sprite_", ".png");
+  spriteDown = new AnimatedGif (4, "sprite/down/sprite_", ".png");
+  spriteLeft = new AnimatedGif (4, "sprite/left/sprite_", ".png");
+  spriteRight = new AnimatedGif (4, "sprite/right/sprite_", ".png");
 
   //============================= buttons
   introButton  = new Button(iFont, "Begin", 400, 530, 300, 100, black, white);
   storyButton  = new Button(iFont, "Enter", 400, 530, 300, 100, black, white);
   returnButton  = new Button(iFont, "RETURN", 400, 530, 300, 100, black, white);
+
 
   // ==================== fonts and images
   iFont = createFont("OldLondon.ttf", 100);
@@ -85,7 +95,8 @@ void setup() {
   doorS = loadImage("doorS.png");
   doorW = loadImage("doorW.png");
   potion = loadImage("health4.png");
-
+  shield = loadImage("shield.png");
+  shieldcount = loadImage("shieldcount.png");
 
   //================= objects
   myHero = new Hero();
@@ -107,29 +118,28 @@ void setup() {
       y = y + 5;
     }
   }
-  
+
   //loading the enemies from map
   x = 0;
   y = 0;
-  while(y < map.height){
-   color roomColor =  map.get(x, y);
-    if (roomColor == brown){
+  while (y < map.height) {
+    color roomColor =  map.get(x, y);
+    if (roomColor == brown) {
       myObjects.add(new Lurker(x, y, width/2, height/2));
     }
-       if (roomColor == black){
-        myObjects.add(new Spawner(x, y));  
+    if (roomColor == black) {
+      myObjects.add(new Spawner(x, y));
     }
-    
-       if (roomColor == darkBlue){
-        myObjects.add(new Bat(100,x, y, width/2, height/2));  
+
+    if (roomColor == darkBlue) {
+      myObjects.add(new Bat(100, x, y, width/2, height/2));
     }
-  x++;
-  if (x == map.width){
-  x = 0;
-  y++;
+    x++;
+    if (x == map.width) {
+      x = 0;
+      y++;
+    }
   }
-  }
-  
 }
 
 void draw() {

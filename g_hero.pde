@@ -1,6 +1,7 @@
 class Hero extends GameObjects {
   float speed;
   Weapon myWeapon;
+  AnimatedGif currentAction;
   boolean immune;
   int immunetime = 0;
   color c;
@@ -15,28 +16,27 @@ class Hero extends GameObjects {
     c = green;
     immune = false;
     myWeapon = new AutoPistol();
+    currentAction = spriteDown;
   }
 
   void show() {
-    fill(c);
-    stroke(black);
+
+    currentAction.show(loc.x, loc.y, size/1.5*1.5, size*1.5);
+    //healthbar
+    rectMode(CENTER);
+    fill(brightRed);
+    stroke(0);
     strokeWeight(2);
-    circle(loc.x, loc.y, size);
-//healthbar
-rectMode(CENTER);
-fill(brightRed);
-stroke(0);
-strokeWeight(2);
-float lifemeter = map(hp, 0, 100, 0, 70);
-rect(loc.x, loc.y + -35, 70, 10);
-fill(green);
-noStroke();
-rect(loc.x, loc.y - 35, lifemeter, 10);
+    float lifemeter = map(hp, 0, 100, 0, 70);
+    rect(loc.x, loc.y + -35, 70, 10);
+    fill(green);
+    noStroke();
+    rect(loc.x, loc.y - 35, lifemeter, 10);
   }
 
   void act() {
     super.act();
-    
+
     if (immune) {
       immunetime++;
       c = red;
@@ -56,6 +56,15 @@ rect(loc.x, loc.y - 35, lifemeter, 10);
 
     if (!wkey && !skey) vel.y = vel.y*0.9;
     if (!akey && !dkey) vel.x = vel.x*0.9;
+
+    //currrrrent action
+    if (abs(vel.y) > abs(vel.x)) {
+      if (vel.y >= 0) currentAction = spriteDown;
+      else currentAction = spriteUp;
+    } else {
+      if (vel.x > 0) currentAction = spriteRight;
+      else currentAction = spriteLeft;
+    }
 
     //moving around rooms
 
@@ -85,5 +94,6 @@ rect(loc.x, loc.y - 35, lifemeter, 10);
     if (hp <=0) {
       mode = GAMEOVER;
     }
+    if (hp >=100) hp = 100;
   }
 }

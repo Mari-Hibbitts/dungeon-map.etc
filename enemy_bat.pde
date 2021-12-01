@@ -5,7 +5,7 @@ class Bat extends Enemy {
     super(hp, 50, x, y);
     loc = new PVector (locx, locy);
   }
-  
+
   void show() {
     stroke(0);
     strokeWeight(2);
@@ -54,6 +54,10 @@ class Bat extends Enemy {
       }
 
       i++;
+    }
+
+    if (hp <=0) {
+      myObjects.add(new droppedItem(loc.x, loc.y, roomX, roomY));
     }
   }
 }

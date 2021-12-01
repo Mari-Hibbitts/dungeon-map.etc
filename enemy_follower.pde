@@ -15,6 +15,10 @@ class Follower extends Enemy {
   }
   void act() {
     super.act();
+    
+    if (hp <=0) {
+      myObjects.add(new droppedItemshield(loc.x, loc.y, roomX, roomY));
+    }
 
     vel = new PVector(myHero.loc.x - loc.x, myHero.loc.y - loc.y);
     vel.setMag(1);

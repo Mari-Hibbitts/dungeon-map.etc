@@ -4,7 +4,10 @@ void game() {
   drawRoom();
   drawGameObjects();
   darknessDraw();
-  
+  fill(255);
+  text(myHero.hp, 20, 30);
+  //image(shieldcount, 400, 300, 120, 70);
+
   if (mapkey == true) drawMap();
 
   //pause

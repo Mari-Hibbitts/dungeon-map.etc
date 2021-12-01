@@ -3,22 +3,34 @@ class AnimatedGif {
   int numFrames;
   PImage[] gif;
   int frame;
+  int rate;
 
 
-  AnimatedGif(int nf, String before, String after) {
+  AnimatedGif(int nf, /*int r,*/  String before, String after) {
 
     numFrames = nf;
     gif = new PImage [numFrames];
     frame = 0;
+    //  rate = r;
+
     while (frame < numFrames) {
       gif[frame] = loadImage(before +frame+ after);
-      frame = frame + 1;
+      //  if (numFrames % rate == 0) frame++;
+      frame++;
     }
   }
 
   void show() {
-    if (frame == numFrames) frame = 0;
+    if (frame >= numFrames) frame = 0;
     image(gif[frame], 0, 0, width, height);
-    frame = frame + 1;
+    // if (numFrames % rate == 0) frame++;
+    frame++;
+  }
+
+  void show(float x, float y, float w, float h) {
+    if (frame >= numFrames) frame = 0;
+    image(gif[frame], x, y, w, h);
+    //if (numFrames % rate == 0) frame++;
+    frame++;
   }
 }
