@@ -11,6 +11,9 @@ Button introButton;
 Button storyButton;
 Button returnButton;
 
+//scoring etc
+int money;
+
 
 // ====================== colors 
 color green     = #31710D;
@@ -60,7 +63,8 @@ PImage doorE;
 PImage doorS;
 PImage doorW;
 PImage potion;
-PImage shield, shieldcount;
+PImage shield, shieldcount, poison, coin;
+PImage Pause;
 
 //fonts ================
 PFont iFont;
@@ -80,6 +84,8 @@ void setup() {
   storyButton  = new Button(iFont, "Enter", 400, 530, 300, 100, black, white);
   returnButton  = new Button(iFont, "RETURN", 400, 530, 300, 100, black, white);
 
+//scoring etc
+money = 5;
 
   // ==================== fonts and images
   iFont = createFont("OldLondon.ttf", 100);
@@ -97,6 +103,9 @@ void setup() {
   potion = loadImage("health4.png");
   shield = loadImage("shield.png");
   shieldcount = loadImage("shieldcount.png");
+  poison = loadImage("poison.png");
+  Pause = loadImage("pause.png");
+  coin = loadImage("money.png");
 
   //================= objects
   myHero = new Hero();
