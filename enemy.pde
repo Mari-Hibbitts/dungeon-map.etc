@@ -38,7 +38,6 @@ class Enemy extends GameObjects {
       if (dist(loc.x, loc.y, myHero.loc.x, myHero.loc.y)< size/2+myHero.size/2 && roomX == myHero.roomX && roomY == myHero.roomY) {
         if (vel.mag() > 0) myHero.hp = myHero.hp - int(vel.mag());
         if (vel.mag() <= 0) myHero.hp  = myHero.hp - 1;
-        println("yargh");
 
         myHero.immune = true;
       }

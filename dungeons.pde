@@ -71,7 +71,7 @@ PFont iFont;
 
 
 void setup() {
-  mode = GAME;
+  mode = PAUSE;
   size(800, 600, FX2D);
   Giff = new AnimatedGif(247, "gif1/frame_", "_delay-0.04s.png" );
   spriteUp = new AnimatedGif (4, "sprite/up/sprite_", ".png");
@@ -105,7 +105,7 @@ money = 5;
   shieldcount = loadImage("shieldcount.png");
   poison = loadImage("poison.png");
   Pause = loadImage("pause.png");
-  coin = loadImage("money.png");
+  coin = loadImage("coin2.png");
 
   //================= objects
   myHero = new Hero();
