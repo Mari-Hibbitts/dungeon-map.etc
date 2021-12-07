@@ -10,6 +10,7 @@ boolean hadPressed;
 Button introButton;
 Button storyButton;
 Button returnButton;
+Button PressDAMAGE, PressSPEED, PressHP, PressEXIT;
 
 //scoring etc
 int money;
@@ -63,7 +64,7 @@ PImage doorE;
 PImage doorS;
 PImage doorW;
 PImage potion;
-PImage shield, shieldcount, poison, coin;
+PImage shield, shieldcount, poison, coin, rock, stake;
 PImage Pause;
 
 //fonts ================
@@ -80,12 +81,17 @@ void setup() {
   spriteRight = new AnimatedGif (4, "sprite/right/sprite_", ".png");
 
   //============================= buttons
-  introButton  = new Button(iFont, "Begin", 400, 530, 300, 100, black, white);
-  storyButton  = new Button(iFont, "Enter", 400, 530, 300, 100, black, white);
+  introButton   = new Button(iFont, "Begin", 400, 530, 300, 100, black, white);
+  storyButton   = new Button(iFont, "Enter", 400, 530, 300, 100, black, white);
   returnButton  = new Button(iFont, "RETURN", 400, 530, 300, 100, black, white);
+  PressDAMAGE        = new Button (iFont, "+", 90, 240, 30, 30, black, white);
+  PressSPEED        = new Button (iFont, "+", 90, 340, 30, 30, black, white);
+  PressHP        = new Button (iFont, "+", 90, 440, 30, 30, black, white);
+  PressEXIT      = new Button (iFont, "x", 700, 220, 100, 100, black, white);
 
-//scoring etc
-money = 5;
+
+  //scoring etc
+  money = 5;
 
   // ==================== fonts and images
   iFont = createFont("OldLondon.ttf", 100);
@@ -106,12 +112,15 @@ money = 5;
   poison = loadImage("poison.png");
   Pause = loadImage("pause.png");
   coin = loadImage("coin2.png");
+  rock = loadImage("rock.png");
+  stake = loadImage("stake.png");
 
   //================= objects
   myHero = new Hero();
   myObjects = new ArrayList<GameObjects>();
   myObjects.add(myHero);
   myObjects.add(new Follower (150, 1, 2, width/2, height/2));
+
 
   //darkness
 

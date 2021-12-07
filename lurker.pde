@@ -20,9 +20,11 @@ class Lurker extends Enemy {
       vel = new PVector(myHero.loc.x - loc.x, myHero.loc.y - loc.y);
       vel.setMag(1);
     }
-    
+
     if (hp <=0) {
+          myObjects.add(new Message(loc.x, loc.y, 5));
       myObjects.add(new droppedItempoison(loc.x, loc.y, roomX, roomY));
+  
     }
   }
 }

@@ -6,7 +6,9 @@ void game() {
   darknessDraw();
   fill(255);
   text(myHero.hp, 20, 30);
-  //image(shieldcount, 400, 300, 120, 70);
+  if (pause) mode = PAUSE;
+
+  myObjects.add(new Message(400, 300, 5));
 
   if (mapkey == true) drawMap();
 

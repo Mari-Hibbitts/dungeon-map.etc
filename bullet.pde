@@ -3,23 +3,25 @@ class Bullet extends GameObjects {
 
   PVector aim;
   int timer;
+  PImage weaponType;
 
-  Bullet(PVector _aim, color _c, int _s ) {
+  Bullet(PVector _aim, color _c, int _s) {
     super();
     timer = 90;
     c = _c;
     aim = _aim;
     size = _s;
-    loc = new PVector (myHero.loc.x, myHero.loc.y);
+    loc = new PVector (myHero.loc.x + 15, myHero.loc.y);
     vel = _aim;
     vel.setMag(5);
     roomX = myHero.roomX;
     roomY = myHero.roomY;
+    weaponType = loadImage("rock.png");
   }
 
   void show() {
     fill(c);
-    circle(loc.x, loc.y, size);
+    image(weaponType, loc.x, loc.y, size, size);
   }
 
   void act() {

@@ -4,6 +4,9 @@ class GameObjects {
   int hp;
   int roomX, roomY;
   int size;
+  int damage;
+  int hpMAX;
+  int speed;
   GameObjects() {
     hp = 10;
     loc = new PVector (width/2, height/2);
