@@ -5,7 +5,7 @@ class Hero extends GameObjects {
   boolean immune;
   int immunetime = 0;
   color c;
-  
+
   Hero() {
     super();
     hpMAX = hp = 100;

@@ -22,9 +22,8 @@ class Lurker extends Enemy {
     }
 
     if (hp <=0) {
-          myObjects.add(new Message(loc.x, loc.y, 5));
+      myObjects.add(new Message(loc.x, loc.y, 5));
       myObjects.add(new droppedItempoison(loc.x, loc.y, roomX, roomY));
-  
     }
   }
 }

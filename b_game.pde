@@ -8,7 +8,6 @@ void game() {
   text(myHero.hp, 20, 30);
   if (pause) mode = PAUSE;
 
-  myObjects.add(new Message(400, 300, 5));
 
   if (mapkey == true) drawMap();
 

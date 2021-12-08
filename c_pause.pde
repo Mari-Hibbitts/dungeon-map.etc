@@ -26,25 +26,24 @@ void pause() {
   text("Health Points: "+myHero.hpMAX, 140, 455 );
   text("Speed: "+ myHero.speed, 140, 355 );
   text("Damage Done: "+myHero.damage, 140, 255 );
-  
+
   //if statements for buttons =============================
-   if (PressDAMAGE.clicked && money >= 5) {
-   myHero.damage = myHero.damage + 5;
+  if (PressDAMAGE.clicked && money >= 5) {
+    myHero.damage = myHero.damage + 5;
     money = money - 5;
   }
-    if (PressSPEED.clicked && money >= 5) {
+  if (PressSPEED.clicked && money >= 5) {
     myHero.speed = myHero.speed+ 2;
-        money = money - 5;
-         if (myHero.speed > 9) myHero.speed = 9;
-     }
-   
-    if (PressHP.clicked && money >= 5) {
+    money = money - 5;
+    if (myHero.speed > 9) myHero.speed = 9;
+  }
+
+  if (PressHP.clicked && money >= 5) {
     myHero.hpMAX  = myHero.hpMAX+ 10;
     money = money - 5;
   }
-  
-  if (PressEXIT.clicked) {
-mode = GAME;
 
+  if (PressEXIT.clicked) {
+    mode = GAME;
   }
 }

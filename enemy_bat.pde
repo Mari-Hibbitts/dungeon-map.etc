@@ -54,7 +54,7 @@ class Bat extends Enemy {
       }
       i++;
     }
-    
+
     if (hp <=0) {
       myObjects.add(new droppedItem(loc.x, loc.y, roomX, roomY));
       money = money + 10;

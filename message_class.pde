@@ -4,19 +4,21 @@ class Message extends GameObjects {
   Message (float locx, float locy, int _coins) {
     loc = new PVector(locx, locy);
     coins = _coins;
-    lifetime = 0;
+ lifetime = 0;
     hp = 10;
+    roomX = myHero.roomX;
+    roomY = myHero.roomY;
   }
 
   void show() {
-    rect(134, 245, 45, 234);
     fill(white);
-    text("coins", loc.x, loc.y);
-    println("wooooo");
+    textSize(20);
+ textFont(iFont);
+    text("+", loc.x, loc.y);
   }
   void act() {
     lifetime++;
-    //loc.y++;
-    //if (lifetime > 30) hp = 0;
+    loc.y--;
+    if (lifetime > 150) hp = 0;
   }
 }
