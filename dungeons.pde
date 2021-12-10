@@ -51,6 +51,7 @@ AnimatedGif spriteUp;
 AnimatedGif spriteDown;
 AnimatedGif spriteLeft;
 AnimatedGif spriteRight;
+AnimatedGif grass;
 PImage room;
 PImage floor;
 PImage card1;
@@ -65,20 +66,21 @@ PImage doorS;
 PImage doorW;
 PImage potion;
 PImage shield, shieldcount, poison, coin, rock, stake;
-PImage Pause;
+PImage Pause, gameover;
 
 //fonts ================
 PFont iFont;
 
 
 void setup() {
-  mode = GAME;
+  mode = GAMEOVER;
   size(800, 600, FX2D);
   Giff = new AnimatedGif(247, "gif1/frame_", "_delay-0.04s.png" );
   spriteUp = new AnimatedGif (4, "sprite/up/sprite_", ".png");
   spriteDown = new AnimatedGif (4, "sprite/down/sprite_", ".png");
   spriteLeft = new AnimatedGif (4, "sprite/left/sprite_", ".png");
   spriteRight = new AnimatedGif (4, "sprite/right/sprite_", ".png");
+    grass = new AnimatedGif (6, "frame_", "_delay-0.13s.gif");
 
   //============================= buttons
   introButton   = new Button(iFont, "Begin", 400, 530, 300, 100, black, white);
@@ -114,7 +116,7 @@ void setup() {
   coin = loadImage("coin2.png");
   rock = loadImage("rock.png");
   stake = loadImage("stake.png");
-
+  gameover = loadImage("gameover.png");
   //================= objects
   myHero = new Hero();
   myObjects = new ArrayList<GameObjects>();

@@ -12,9 +12,9 @@ class Message extends GameObjects {
 
   void show() {
     fill(white);
-    textSize(20);
- textFont(iFont);
-    text("+", loc.x, loc.y);
+   // textSize(20);
+ //textFont(iFont);
+    text("+5", loc.x, loc.y);
   }
   void act() {
     lifetime++;
